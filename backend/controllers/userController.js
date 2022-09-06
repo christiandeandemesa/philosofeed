@@ -9,8 +9,6 @@ const registerUser = asyncHandler(async (req, res) => {
 	const {username, email, password, confirmPassword} = req.body;
 	// todo profilePic with multer
 
-	console.log(req.body);
-
 	// If existingUser is already a document in the users collection, log an error
 	const existingUser = await User.findOne({email});
 	if (existingUser) {
